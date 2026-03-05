@@ -222,13 +222,14 @@
         .dropdown-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
             padding: 0 30px;
         }
 
         .dropdown-section.active .dropdown-content {
-            max-height: 1000px;
+            max-height: 5000px;
             padding: 40px 30px;
+            overflow: visible;
         }
 
         .account-tag {
@@ -348,6 +349,7 @@
             letter-spacing: 1.5px;
             box-shadow: 0 15px 40px rgba(243, 156, 18, 0.3);
             margin-top: 30px;
+            margin-bottom: 10px;
         }
 
         .cta-button:hover {
@@ -512,20 +514,110 @@
         }
 
         @media (max-width: 768px) {
+            .header {
+                padding: 40px 15px 35px;
+            }
+
+            .dropdown-content {
+                padding: 0 20px;
+            }
+
+            .dropdown-section.active .dropdown-content {
+                max-height: none;
+                padding: 30px 20px;
+            }
+
             .deposit-row {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .features-row {
                 flex-direction: column;
             }
 
+            .dropdown-header {
+                padding: 20px;
+            }
+
             .dropdown-header h3 {
-                font-size: 22px;
+                font-size: 20px;
+                gap: 10px;
+            }
+
+            .dropdown-header h3 span:first-child {
+                font-size: 24px;
+            }
+
+            .account-tag {
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+
+            .cta-button {
+                padding: 16px 30px;
+                font-size: 16px;
+                margin-top: 25px;
+                margin-bottom: 15px;
+            }
+
+            .deposit-info,
+            .benefits-list {
+                padding: 20px;
+            }
+
+            .lot-info {
+                padding: 15px;
+            }
+
+            .benefit-item {
+                padding: 15px;
+                font-size: 15px;
             }
 
             .branding-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .feature-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .main-content {
+                padding: 50px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dropdown-header h3 {
+                font-size: 18px;
+                flex-wrap: wrap;
+            }
+
+            .dropdown-icon {
+                font-size: 24px;
+            }
+
+            .cta-button {
+                padding: 14px 25px;
+                font-size: 15px;
+            }
+
+            .deposit-value {
+                font-size: 28px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .header-subtitle {
+                font-size: 16px;
             }
         }
     </style>
@@ -538,7 +630,7 @@
                 <span>Kembali ke Pilihan Akun</span>
             </a>
 
-            <div class="account-badge">Akun Terpopuler</div>
+            <div class="account-badge">⭐ Akun Terpopuler</div>
             
             <h1>Buka Akun ULT Islamic</h1>
             
@@ -590,6 +682,7 @@
                 <div class="dropdown-section active">
                     <div class="dropdown-header" onclick="toggleDropdown(this)">
                         <h3>
+                            <span>🌟</span>
                             <span>Micro Account</span>
                             <span class="account-tag">Untuk Pemula</span>
                         </h3>
@@ -653,6 +746,7 @@
                 <div class="dropdown-section">
                     <div class="dropdown-header" onclick="toggleDropdown(this)">
                         <h3>
+                            <span>🚀</span>
                             <span>Mini Account</span>
                             <span class="account-tag">Paling Populer</span>
                         </h3>
@@ -716,6 +810,7 @@
                 <div class="dropdown-section">
                     <div class="dropdown-header" onclick="toggleDropdown(this)">
                         <h3>
+                            <span>💎</span>
                             <span>Regular Account</span>
                             <span class="account-tag">Professional</span>
                         </h3>
@@ -786,11 +881,31 @@
             <div class="branding-grid">
                 <div class="branding-item">
                     <div class="branding-logo">
-                        <img src="Images/BullishFX-Logo.png" alt="BullishFX Logo" onerror="this.style.display='none'">
+                        <img src="/mnt/user-data/uploads/1770976853672_image.png" alt="BullishFX Logo" onerror="this.style.display='none'">
                     </div>
                     <h3>BullishFX Platform</h3>
                     <p>
                         Platform trading forex dan metal terpercaya dengan teknologi STP/ECN untuk eksekusi order terbaik. Lebih dari 2,347 trader aktif mempercayai BullishFX untuk journey trading mereka.
+                    </p>
+                </div>
+
+                <div class="branding-item">
+                    <div class="branding-logo">
+                        <img src="/mnt/user-data/uploads/1770976799702_image.png" alt="BFX Mobile Logo" onerror="this.style.display='none'">
+                    </div>
+                    <h3>BFX Mobile 4.0</h3>
+                    <p>
+                        Aplikasi mobile canggih dengan fitur lengkap: In-House Transfer, Economic Calendar, Market News Update, dan Heir Data. Trading dimana saja, kapan saja dengan technology in your pocket.
+                    </p>
+                </div>
+
+                <div class="branding-item">
+                    <div class="branding-logo">
+                        <img src="/mnt/user-data/uploads/1770976873402_image.png" alt="MetaTrader 4 Logo" onerror="this.style.display='none'">
+                    </div>
+                    <h3>MetaTrader 4</h3>
+                    <p>
+                        Platform trading #1 di dunia yang digunakan oleh jutaan trader profesional. Charting tools lengkap, Expert Advisor support, dan one-click trading untuk eksekusi super cepat.
                     </p>
                 </div>
             </div>
@@ -838,7 +953,7 @@
             <p>Kembali ke halaman sebelumnya untuk membandingkan LP, FIX, atau PRO Islamic Account</p>
             <a href="akun.html" class="back-link">
                 <span>←</span>
-                <span>Kembali ke Pilihan Akun</span>
+                <span>Kembali ke Pilihan Akun Islamic</span>
             </a>
         </div>
     </div>
